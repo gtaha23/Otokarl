@@ -44,7 +44,28 @@ async def detect(ctx):
 
             file_name = attachment.filename
 
-            file_type = mdl.class_name
+            file_url = attachment.url
+
+            await attachment.save(f"./{attachment.filename}")
+
+            # Load the image
+            img = mdl.Image.open(f"./{attachment.filename}")
+            
+            # Resize the image
+            img = img.resize((224, 224))
+            
+            # Convert the image to a numpy array
+            img_array = mdl.np.array(img)
+            
+            # Normalize the image array
+            img_array = img_array / 255.0
+            
+        
+            
+            # Get the class with the highest probability
+            class_id = mdl.np.argmax(mdl.prediction)
+            class_names = ["0 Küresel Isınma", "1 Yangınlar", "2 Fabrika Atıkları"]
+            file_type = class_names[class_id]
 
             if file_type == "0 Küresel Isınma":
 
@@ -62,8 +83,8 @@ async def detect(ctx):
     else:
         await ctx.send("You forgot to upload the image :(")
 
-@bot.command()
-async def help(ctx):
+@bot.command(name = "custom_help")
+async def custom_help(ctx):
     await ctx.send("Hello, If you need help, here are the commands:")
     await ctx.send("--> hello")
     await ctx.send("--> heh")
