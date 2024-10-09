@@ -31,6 +31,7 @@ Aksaklıklar için çok özür dilerim. Resimler şuanki v2 için devam edilen t
 ## Referanslar
 - AI-Bot (Karter)
 - VTEM
+- Gt_Bot
 
 ## Kılavuz
 - Bu bloglardan yararlanabilirsiniz 
