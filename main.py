@@ -84,6 +84,14 @@ async def detect(ctx):
     else:
         await ctx.send("You forgot to upload the image :(")
 
+@bot.command
+async def ver_check(ctx):
+    await ctx.send("Current version: v1.5pre2")
+
+@bot.command
+async def command_number(ctx):
+    await ctx.send("There are currently 7 commands")
+
 @bot.command(name = "custom_help")
 async def custom_help(ctx):
     await ctx.send("Hello, If you need help, here are the commands:")
@@ -92,6 +100,8 @@ async def custom_help(ctx):
     await ctx.send("--> save")
     await ctx.send("--> detect")
     await ctx.send("--> custom_help")
+    await ctx.send("--> ver_check")
+    await ctx.send("--> command_number")
 
 # The token for the bot
 bot.run("TOKEN")
