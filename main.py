@@ -29,9 +29,9 @@ async def save(ctx):
 
             file_url = attachment.url
 
-            await attachment.save(f"./{attachment.filename}")
+            await attachment.save(f"./{file_name}")
 
-            await ctx.send(f"Saved the image to ./{attachment.filename}")
+            await ctx.send(f"Saved the image to ./{file_name}")
 
     else:
         await ctx.send("You forgot to upload the image :(")
@@ -59,8 +59,6 @@ async def detect(ctx):
             
             # Normalize the image array
             img_array = img_array / 255.0
-            
-        
             
             # Get the class with the highest probability
             class_id = mdl.np.argmax(mdl.prediction)
