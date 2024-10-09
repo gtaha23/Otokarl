@@ -2,15 +2,18 @@ import discord
 from discord.ext import commands
 import models as mdl
 
+# prefixes for the bot
 intents = discord.Intents.default()
 intents.message_content = True
 
 bot = commands.Bot(command_prefix='!', intents=intents)
 
+#Alert of the bot being ready
 @bot.event
 async def on_ready():
     print(f'We have logged in as {bot.user}')
 
+# // COMMANDS \\ 
 @bot.command()
 async def hello(ctx):
     await ctx.send(f'Hi! I am a bot {bot.user}!')
@@ -90,4 +93,5 @@ async def custom_help(ctx):
     await ctx.send("--> detect")
     await ctx.send("--> custom_help")
 
+# The token for the bot
 bot.run("TOKEN")
