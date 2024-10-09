@@ -88,5 +88,6 @@ async def custom_help(ctx):
     await ctx.send("--> heh")
     await ctx.send("--> save")
     await ctx.send("--> detect")
+    await ctx.send("--> custom_help")
 
 bot.run("TOKEN")
