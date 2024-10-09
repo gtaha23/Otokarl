@@ -18,11 +18,12 @@ En yeni projem: // OTOKARL //
 ![Küresel ısınma (Şuanda ulaşılamaz)](https://github.com/user-attachments/assets/204c9cd1-e87c-4880-bad2-f5e9b48a9a7e)
 
 # Gereksinimler
-- python 3.10 
+- python 3.10.5
 - requests kütüphanesi
 - keras kütüphanesi
+- tensorflow (Belirli versiyonlar 1.24 ile 1.22.0 arası)
 - pillow kütüphanesi
-- numpy kütüphanesi (isteğe bağlı)
+- numpy kütüphanesi (Versiyon 2'den küçük olmalı)
 
 ## Referanslar
 - AI-Bot (Karter)
